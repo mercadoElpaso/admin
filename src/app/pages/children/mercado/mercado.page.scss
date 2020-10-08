@@ -1,0 +1,45 @@
+ion-split-pane{
+    --side-min-width: 300px;
+    --side-width: 320px;
+    ion-toolbar{
+        --background: #212330;
+    }   
+
+    ion-menu, ion-content{
+        --background: #212330;
+    }
+
+    ion-item{
+        --background: rgba(0,0,0,0);
+        ion-label{
+            color: var(--ion-color-light)
+        }
+    }
+
+    ion-list {
+        background: none;
+        ion-list-header{
+            --color: var(--ion-color-grey);
+            text-transform: uppercase;
+        }
+    }
+}
+
+ion-item.item-parent-selected::part(detail-icon) {
+    transform: rotate(90deg);
+    transition: transform .3s ease-in-out;
+    --color: #F0EFF5;
+}
+
+div.item-selected.collapsed {
+    max-height: 500px;
+    transition: max-height .3s ease-in-out;
+    padding-left: 15px;
+}
+
+.collapsed {
+    max-height: 0px;
+    transition: max-height .3s ease-in-out;
+    overflow: hidden;
+}
+

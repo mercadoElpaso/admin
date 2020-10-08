@@ -1,0 +1,184 @@
+<ion-split-pane contentId="admin">
+  <!--  our side menu  -->
+  <ion-menu side="start" menuId="admin-menu" type="overlay" contentId="admin">
+
+    <!-- Client Menu -->
+    <ion-header>
+      <ion-toolbar>
+        <ion-item lines="none">
+          <ion-avatar class="avatar-menu">
+              <img
+                [src]="userInfo?.client_account?.profile?.picture_url?.length>0?userInfo?.client_account?.profile?.picture_url:defaultProfileImage" />
+            </ion-avatar>          
+            <ion-label class="app-padding-start-med">
+                <ion-text color="light" class="app-font-lrgr">
+                    <h2> 
+                        <b>
+                          Administrador
+                        </b>    
+                    </h2> <!-- {{userInfo?.user.name}} -->
+                </ion-text>
+                <!-- <ion-text color="medium" class="app-font-med">
+                  <p>
+                    Administrador
+                  </p>
+                </ion-text> -->
+              </ion-label> 
+      </ion-item>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content class="modalContentRol">
+
+      <ion-list>
+        <ion-list-header class="app-font-xsml">
+          Principal
+        </ion-list-header>
+        <ion-menu-toggle autoHide="false">
+          <ion-item detail="false" routerLink="/home" routerLinkActive="item-parent-selected"
+            lines="none">
+            <ion-label> Dashboard </ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-list-header class="app-font-xsml">
+          Miembros
+        </ion-list-header>
+        <ion-menu-toggle autoHide="false">
+          <ion-item routerLink="/owner" routerLinkActive="item-parent-selected" lines="none" detail="true">
+            <ion-label class="app-font-med"> 
+              Propietarios 
+            </ion-label>
+          </ion-item>
+          <div class="collapsed" routerLinkActive="item-selected">
+            <ion-menu-toggle autoHide="false">
+              <ion-item detail="false" routerLink="/owner/list" routerLinkActive="item-selected"
+                lines="none">
+                <ion-label class="app-font-sml"> 
+                  Lista de propietarios 
+                </ion-label>
+              </ion-item>
+              <ion-item detail="false" routerLink="/owner/add" routerLinkActive="item-selected"
+                lines="none">
+                <ion-label class="app-font-sml"> 
+                  Añadir propietario 
+                </ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+          </div>
+        </ion-menu-toggle>
+
+        <ion-list-header class="app-font-xsml">
+          Locaciones
+        </ion-list-header>
+        <ion-menu-toggle autoHide="false">
+          <ion-item routerLink="/concessionaire" routerLinkActive="item-parent-selected" lines="none" detail="true">
+            <ion-label class="app-font-med"> 
+              Concesionarios
+             </ion-label>
+          </ion-item>
+          <div class="collapsed" routerLinkActive="item-selected">
+            <ion-item detail="false" routerLink="/concessionaire/list" routerLinkActive="item-selected"
+              lines="none">
+              <ion-label class="app-font-sml"> 
+                Organización 
+              </ion-label>
+            </ion-item>
+
+            <ion-item detail="false" routerLink="/concessionaire/add" routerLinkActive="item-selected"
+              lines="none">
+              <ion-label class="app-font-sml"> 
+                Agregar concesionario 
+              </ion-label>
+            </ion-item>
+          </div>
+        </ion-menu-toggle>
+
+        <ion-list-header class="app-font-xsml">
+          Licitaciones
+        </ion-list-header>
+        <ion-menu-toggle autoHide="false">
+          <ion-item routerLink="/permission" routerLinkActive="item-parent-selected" lines="none" detail="true">
+            <ion-label> Licitaciones </ion-label>
+          </ion-item>
+          <div class="collapsed" routerLinkActive="item-selected">
+            <ion-item detail="false" routerLink="/permission/list" routerLinkActive="item-selected"
+              lines="none">
+              <ion-label> Lista de licitaciones </ion-label>
+            </ion-item>
+
+            <ion-item detail="false" routerLink="/permission/add" routerLinkActive="item-selected"
+              lines="none">
+              <ion-label> Agregar licitación </ion-label>
+            </ion-item>
+          </div>
+      </ion-menu-toggle>
+
+        <ion-list-header class="app-font-xsml">
+          Ventas
+        </ion-list-header>
+        <ion-menu-toggle autoHide="false">
+          <ion-item routerLink="/economic-activity" routerLinkActive="item-parent-selected" lines="none" detail="true">
+            <ion-label class="app-font-med"> 
+              Actividad Económica 
+            </ion-label>
+          </ion-item>
+          <div class="collapsed" routerLinkActive="item-selected">
+            <ion-item detail="false" routerLink="/economic-activity/list" routerLinkActive="item-selected" lines="none">
+              <ion-label class="app-font-sml"> 
+                Lista de actividades económicas 
+              </ion-label>
+            </ion-item>
+
+            <ion-item detail="false" routerLink="/economic-activity/add" routerLinkActive="item-selected" lines="none">
+              <ion-label class="app-font-sml"> 
+                Agregar actividades económicas
+              </ion-label>
+            </ion-item>
+          </div>
+        </ion-menu-toggle>
+
+        <!-- <ion-list-header class="app-font-xsml">
+          Organización
+        </ion-list-header>
+        <ion-menu-toggle autoHide="false">
+          <ion-item detail="true" routerLink="/admins" routerLinkActive="item-parent-selected" lines="none" detail="true">
+            <ion-label> Administradores </ion-label>
+          </ion-item>
+          <div class="collapsed" routerLinkActive="item-selected">
+            <ion-item detail="false" routerLink="/admins/list" routerLinkActive="item-selected" lines="none">
+              <ion-label> Lista de administradores </ion-label>
+            </ion-item>
+
+            <ion-item detail="false" routerLink="/admins/add" routerLinkActive="item-selected" lines="none">
+              <ion-label> Añadir administrador </ion-label>
+            </ion-item>
+          </div>
+          
+        </ion-menu-toggle> -->
+
+        <ion-list-header class="app-font-xsml">
+          Cuenta
+        </ion-list-header>
+        <ion-menu-toggle autoHide="false">
+          <ion-item detail="false" routerLink="/profile" routerLinkActive="item-parent-selected" lines="none">
+            <ion-label> Perfil </ion-label>
+          </ion-item>
+
+          <ion-item detail="false" routerLink="/password" routerLinkActive="item-parent-selected" lines="none">
+            <ion-label> Contraseña </ion-label>
+          </ion-item>
+
+          <ion-item detail="false" button lines="none" (click)="logout()">
+            <ion-label> Cerrar Sesión </ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <!-- the main content -->
+  <ion-router-outlet id="admin"></ion-router-outlet>
+
+</ion-split-pane>

@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title color="light">
+      Proceso Adminitrstivo Mercado Municipal el Paso
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-row class="ion-align-items-center ion-justify-content-center">
+    <ion-col size-md="4" size-sm="0">
+
+    </ion-col>
+
+    <ion-col size-md="4" size-sm>
+      <div class="modal-login">
+        <ion-row class="row-welcome">
+          <ion-col class="ion-text-center app-padding-vertical-med">
+            <ion-text class="app-font-lrgr" color=light>
+              Bienvenido
+            </ion-text>
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="app-padding-vertical-xlrg">
+          <ion-col>
+            <ion-item lines="none">
+              <ion-input placeholder="Usuario" class="app-font-sml" [(ngModel)]="user"></ion-input>
+            </ion-item>
+
+            <ion-item lines="none">
+              <ion-input placeholder="Contraseña" class="app-font-sml" [(ngModel)]="password"></ion-input>
+            </ion-item>
+
+            <ion-item lines="none" button (click)="forgotPass()">
+              <ion-label slot="end" class="ion-text-end app-font-smlr" color="medium">
+                ¿Olvidó su contraseña?
+              </ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col class="ion-text-center">
+            <ion-button class="button-login" (click)="login()">
+              Iniciar sesión
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </div>
+    </ion-col>
+
+    <ion-col size-md="4" size-sm="0">
+
+    </ion-col>
+  </ion-row>
+
+</ion-content>

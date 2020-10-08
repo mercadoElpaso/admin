@@ -74,9 +74,35 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  /** App colors **/
+
+    /** Blue **/
+    --ion-color-blue: #204051;
+    --ion-color-blue-rgb: 32,64,81;
+    --ion-color-blue-contrast: #ffffff;
+    --ion-color-blue-contrast-rgb: 255,255,255;
+    --ion-color-blue-shade: #1c3847;
+    --ion-color-blue-tint: #365362;
+
+    /** Green **/
+    --ion-color-green: #3b6978;
+    --ion-color-green-rgb: 59,105,120;
+    --ion-color-green-contrast: #ffffff;
+    --ion-color-green-contrast-rgb: 255,255,255;
+    --ion-color-green-shade: #345c6a;
+    --ion-color-green-tint: #4f7886;
+
+    /** Grey **/
+    --ion-color-grey: #e7dfd5;
+    --ion-color-grey-rgb: 231,223,213;
+    --ion-color-grey-contrast: #000000;
+    --ion-color-grey-contrast-rgb: 0,0,0;
+    --ion-color-grey-shade: #cbc4bb;
+    --ion-color-grey-tint: #e9e2d9;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   /*
    * Dark Colors
    * -------------------------------------------
@@ -145,6 +171,32 @@
     --ion-color-light-contrast-rgb: 255,255,255;
     --ion-color-light-shade: #1e2023;
     --ion-color-light-tint: #383a3e;
+
+    /** App colors **/
+
+    /** Blue **/
+    --ion-color-blue: #204051;
+    --ion-color-blue-rgb: 32,64,81;
+    --ion-color-blue-contrast: #ffffff;
+    --ion-color-blue-contrast-rgb: 255,255,255;
+    --ion-color-blue-shade: #1c3847;
+    --ion-color-blue-tint: #365362;
+
+    /** Green **/
+    --ion-color-green: #3b6978;
+    --ion-color-green-rgb: 59,105,120;
+    --ion-color-green-contrast: #ffffff;
+    --ion-color-green-contrast-rgb: 255,255,255;
+    --ion-color-green-shade: #345c6a;
+    --ion-color-green-tint: #4f7886;
+
+    /** Grey **/
+    --ion-color-grey: #e7dfd5;
+    --ion-color-grey-rgb: 231,223,213;
+    --ion-color-grey-contrast: #000000;
+    --ion-color-grey-contrast-rgb: 0,0,0;
+    --ion-color-grey-shade: #cbc4bb;
+    --ion-color-grey-tint: #e9e2d9;
   }
 
   /*

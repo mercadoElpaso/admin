@@ -1,0 +1,31 @@
+ion-toolbar{
+    --background: var(--ion-color-green);
+}
+
+ion-content{
+    --background: var(--ion-color-grey);
+    ion-row{
+        height: 100%;
+        .modal-login{
+            border-radius: 10px;
+            border: solid 1px var(--ion-color-green);
+            background: white;
+            overflow: hidden;
+            .row-welcome{
+                background: var(--ion-color-green);
+            }
+
+            ion-item{
+                ion-input{
+                    background: var(--ion-color-grey);
+                    border-radius: 5px;
+                    --padding-start: 15px;
+                }
+            }
+
+            .button-login{
+                --background: var(--ion-color-green)
+            }
+        }
+    }
+}

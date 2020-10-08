@@ -1,0 +1,10 @@
+.row-image{
+    height: 80%;
+    ion-col{
+        height: 100%;
+        .image-not-found{
+            height: 100%;
+            width: auto;
+        }
+    }
+}
