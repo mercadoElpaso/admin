@@ -7,5 +7,125 @@
 </ion-header>
 
 <ion-content>
+  <ion-grid class="grid-content">
+    <ion-row class="ion-align-items-center">
+      <ion-col class="ion-text-left" size="8">
+        <h1 class="app-font-lrgr app-no-margin " >
+          Actividad Económica
+        </h1>
+      </ion-col>
 
+      <ion-col size="4" class="ion-text-right">
+        <ion-searchbar animated debounce="500" placeholder = "Buscar">
+        </ion-searchbar>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-grid class="data-grid">
+          <ion-row class="border-bottom-row">
+            <ion-col size="0.5">
+          
+            </ion-col>
+            <ion-col class="ion-align-self-end">
+              <ion-label color="medium" class="app-font-smlr">
+                NOMBRE
+                <ion-icon name="caret-down" class="down"></ion-icon>
+                <ion-icon name="caret-up" class="up"></ion-icon>
+              </ion-label>
+            </ion-col>
+            <ion-col class="ion-align-self-end" size="2">
+            </ion-col>
+          </ion-row>
+          
+           <ion-row>
+            <ion-col class="ion-text-center">
+              <ion-spinner *ngIf="loadingRecords"></ion-spinner>
+              <ion-label color="dark" class="app-font-sml" [hidden]="loadingRecords" *ngIf="records?.length === 0">
+                 No hay Registros
+              </ion-label>
+              <ion-label color="dark" class="app-font-sml" [hidden]="loadingRecords" *ngIf="records?.length === 0">
+                 No hay Registros
+              </ion-label>
+            </ion-col>
+          </ion-row>
+      
+          <ion-row *ngFor="let record of pageHandler.records; index as i" class="ion-align-items-center"
+           [class]=" (i % 2) ? 'record-even-row' : 'record-odd-row' " [hidden]="loadingRecords"
+           (click)="gotoDetail(record)">
+            <ion-col class="ion-align-self-center ion-text-center" size="0.5" >
+              <ion-label color="medium" class="app-font-smlr">{{ i < 9 ? '0'+(i+1) : i+1 }}</ion-label>
+            </ion-col>
+            <ion-col class="ion-align-self-center">
+              <ion-label color="medium" class="app-font-smlr">{{ record.name }}</ion-label>
+            </ion-col>
+          <ion-col size="2" class="ion-text-center">
+            <ion-button fill="clear"> 
+              <ion-icon name="close-circle" color="danger"> </ion-icon> 
+            </ion-button>  
+          </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div slot="fixed" class="footer">
+    <ion-grid class="footer-content">
+      <ion-row class="ion-align-items-center">
+        <ion-col>
+          <ion-label color="medium" class="app-font-sml">
+            Estas viendo 10 de 15 registros
+          </ion-label>
+        </ion-col>
+        <ion-col class="pagination-col">
+          <ion-button style="width: fit-content;" color="medium" fill="clear" size="small"
+            [disabled]="pageHandler.current_page<=1" (click)="loadPage(pageHandler.current_page-1)">
+            <ion-label class="app-font-sml"> Atrás </ion-label>
+          </ion-button>
+          <ion-button color="light" size="small" *ngIf="pageHandler.current_page-2>1" (click)="loadPage(1)">{{ 1 }}
+          </ion-button>
+          <ion-label *ngIf="pageHandler.current_page-3>1">...</ion-label>
+          <ion-button color="light" size="small" *ngIf="pageHandler.current_page-2>0"
+            (click)="loadPage(pageHandler.current_page-2)">{{ pageHandler.current_page-2 }}</ion-button>
+          <ion-button color="light" size="small" *ngIf="pageHandler.current_page-1>0"
+            (click)="loadPage(pageHandler.current_page-1)">{{ pageHandler.current_page-1 }}</ion-button>
+          <ion-button color="medium" size="small">{{ pageHandler.current_page }}</ion-button>
+          <ion-button color="light" size="small" *ngIf="pageHandler.current_page < pageHandler.total_pages"
+            (click)="loadPage(pageHandler.current_page+1)">{{ pageHandler.current_page+1 }}</ion-button>
+          <ion-button color="light" size="small" *ngIf="pageHandler.current_page+1 < pageHandler.total_pages"
+            (click)="loadPage(pageHandler.current_page+2)">{{ pageHandler.current_page+2 }}</ion-button>
+          <ion-label *ngIf="pageHandler.current_page+3 < pageHandler.total_pages">...</ion-label>
+          <ion-button color="light" size="small" *ngIf="pageHandler.current_page+2 < pageHandler.total_pages"
+            (click)="loadPage(pageHandler.total_pages)">{{ pageHandler.total_pages }}</ion-button>
+          <ion-button style="width: fit-content;" color="medium" fill="clear" size="small"
+            [disabled]="pageHandler.current_page>=pageHandler.total_pages" (click)="loadPage(pageHandler.current_page+1)">
+            <ion-label class="app-font-sml">
+              Siguiente
+            </ion-label>
+          </ion-button>
+        </ion-col>
+        <ion-col class="ion-text-end">
+          <ion-button class="app-font-sml" [disabled]="downloadingRecords" color="medium" fill="clear" size="small" 
+          routerLink="/conssecionaire/add">
+            Agregar consecionario
+            <ion-icon color="blue" name="add-circle" class="app-font-xlrg"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <!-- <ion-col class="ion-text-end ">
+          <ion-button class="app-font-sml" [disabled]="downloadingRecords" color="medium" fill="clear" size="small" 
+          (click)="downloadRecords()">
+            <ion-label [hidden]="downloadingRecords">
+              Descargar
+            </ion-label>
+            <ion-spinner [hidden]="!downloadingRecords"></ion-spinner>
+            <ion-button fill="clear" class="no-padding">
+              <ion-icon color="danger" name="download" class="app-font-xlrg"></ion-icon>
+            </ion-button>
+          </ion-button>
+        </ion-col> -->
+      </ion-row>
+    </ion-grid>
+  </div>
 </ion-content>

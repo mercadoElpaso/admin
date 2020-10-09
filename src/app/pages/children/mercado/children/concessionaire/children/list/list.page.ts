@@ -34,7 +34,7 @@ export class ListPage implements OnInit {
     records: [
       {
         id: '1',
-        supplier:'Jose Alvarez',
+        supplier: 'Jose Alvarez',
         identification: 'V 12345678',
         direction: 'G-10',
         name: 'El local de jose'
