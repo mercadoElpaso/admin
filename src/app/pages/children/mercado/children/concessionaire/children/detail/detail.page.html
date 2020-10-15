@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="star">
+      <ion-menu-button type="button" color="light"> </ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar> 
+</ion-header>
+<ion-content class= "gris">
+  <ion-button fill="clear" color="dark">
+    <ion-icon name="arrow-back-outline">
+    </ion-icon>
+     VOLVER
+  </ion-button>
+<ion-row class= "row1">
+  <ion-col class="ion-text-start">
+    <ion-row class="ion-align-items-center">
+      <ion-col class="app-col-shrink app-padding-horizontal-lrg">
+        <ion-avatar>
+          <img [src]="DefaultImageProfile">
+        </ion-avatar>
+      </ion-col>
+      <h1 class="app-font-lrgr">
+        Nombre Propietario
+      </h1>
+
+      <ion-col>
+       
+      </ion-col>
+      
+    </ion-row>
+    <ion-row>
+     <ion-col>
+      <ion-item lines="none">
+        <ion-input placeholder="Teléfono"  class="back2">
+        </ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-input placeholder="Email"  class="back2">
+        </ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-input placeholder="Dirección"  class="back2">
+        </ion-input>
+      </ion-item>
+     </ion-col>
+    </ion-row>
+  </ion-col>
+  <ion-col size="4" class=ion-aline-self-center>
+      <ion-item lines="none">
+        <ion-label>
+          <p>
+            Cédula de Identidad
+          </p>
+          <ion-text>
+            v-00000000
+          </ion-text>
+          <p>
+            RIF
+          </p>
+          <ion-text>
+            J-00000000
+          </ion-text>
+        </ion-label>
+      </ion-item>
+      </ion-col>
+</ion-row>
+</ion-content>

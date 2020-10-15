@@ -5,7 +5,7 @@ ion-toolbar{
 ion-content{
     --background: var(--ion-color-grey);
     .grid-content{
-        margin-top: 20px;
+        margin-top: 20px; 
         margin-left: 20px;
         margin-right: 20px;
         padding: 20px;
@@ -74,11 +74,13 @@ ion-content{
     .record-even-row {
         --background: var(--ion-color-light);
         background: var(--ion-color-light);
+        cursor: pointer;
     }
     
     .record-odd-row {
-        --background: #ffffff;
+        --background: #ffffff; 
         background: #ffffff;
+        cursor: pointer;
     }
 
     .footer{
@@ -97,4 +99,7 @@ ion-content{
             }
         }
     }
+}
+.botonfinal {
+    color: var(--ion-color-blue)
 }

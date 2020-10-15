@@ -1,0 +1,26 @@
+ion-toolbar {
+    --background: var(--ion-color-blue)
+}
+.opacidad {
+    opacity:1;
+    color: var(--ion-color-medium);
+}
+.fondo {
+    --background: var(--ion-color-grey);
+    border-radius: 5px;
+    margin-top: 5px;
+    --padding-start: 15px !important;
+}
+.padding2{
+padding: 0px 0px 0px 20px 
+}
+.botones {
+    bottom: 0;
+    width: 100% ;
+    }
+    .guardar {
+        --background: var(--ion-color-blue) 
+    }
+    .icono {
+        color: var(--ion-color-blue)
+    }

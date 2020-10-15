@@ -54,7 +54,7 @@ export class ListPage implements OnInit {
         name: 'Verduras de la esquina'
       }
     ]
-  }
+  };
   constructor(
     private popoverController: PopoverController,
     private navCtrl: NavController
@@ -73,7 +73,7 @@ export class ListPage implements OnInit {
   }
 
   gotoDetail(record){
-    this.navCtrl.navigateForward(`/owner/detail`);
+    this.navCtrl.navigateForward(`/concessionaire/detail`);
   }
 
 

@@ -20,9 +20,14 @@ const routes: Routes = [
       {
         path: 'add',
         loadChildren: () => import('./children/add/add.module').then( m => m.AddPageModule)
+      },
+      {
+        path: 'detail',
+        loadChildren: () => import('./children/detail/detail.module').then( m => m.DetailPageModule)
       }
     ]
   }
+
 ];
 
 @NgModule({

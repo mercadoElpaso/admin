@@ -1,0 +1,19 @@
+ion-toolbar {
+    --background: var(--ion-color-blue); 
+} 
+.gris{
+    --background: var(--ion-color-grey);
+}
+.row1{
+    border-radius: 10px;
+    margin-top: 5px;
+    --padding-start: 15px;
+    background:white;
+    padding: 15px;
+}
+.back2{
+    --background: var(--ion-color-grey);
+    border-radius: 5px;
+    margin-top: 5px;
+    --padding-start: 15px !important;
+}
