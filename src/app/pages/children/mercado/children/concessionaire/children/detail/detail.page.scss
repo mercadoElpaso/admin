@@ -24,7 +24,18 @@ ion-toolbar {
 .columnas{
     background:white;
     border-radius: 5px;
-    margin-top: 5px;
+    // margin-top: 5px;
     margin-left: 15px;
-    --padding-start: 15px !important;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 30px;
+    padding-top: 20px
+}
+
+.colunm-right{
+    margin-right: 15px;
+}
+
+.chip-status{
+    border-radius: 10px;
 }

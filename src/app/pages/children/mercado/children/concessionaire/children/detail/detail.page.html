@@ -6,40 +6,50 @@
   </ion-toolbar> 
 </ion-header>
 <ion-content class= "gris">
-  <ion-button fill="clear" color="dark">
+  <ion-button fill="clear" color="dark" routerLink="/concessionaire/list">
     <ion-icon name="arrow-back-outline">
     </ion-icon>
      VOLVER
   </ion-button>
+  
 <ion-row class= "row1 margen">
-  <ion-col class="ion-text-start">
+  <ion-col size="12" class="ion-no-padding">
     <ion-row class="ion-align-items-center">
       <ion-col class="app-col-shrink app-padding-horizontal-lrg">
         <ion-avatar>
           <img [src]="DefaultImageProfile">
         </ion-avatar>
       </ion-col>
-      <h1 class="app-font-lrgr">
-        Nombre Propietario
-      </h1>
-
-      <ion-col>
-       
+     
+      <ion-col class="ion-text-start">
+        <h1 class="app-font-lrgr">
+          Nombre Propietario
+        </h1>
       </ion-col>
-      
+
+      <ion-col class="ion-text-end">
+        <ion-chip color="secondary" outline class="chip-status">
+          <ion-label color="success">
+             Asignado
+             <ion-icon name="chevron-down"></ion-icon>
+           </ion-label>
+        </ion-chip>
+      </ion-col>
     </ion-row>
+  </ion-col>
+
+  <ion-col class="ion-text-start">
     <ion-row>
      <ion-col>
       <ion-item lines="none">
-        <ion-input placeholder="Teléfono"  class="back2">
+        <ion-input placeholder="Teléfono"  class="app-font-sml back2"></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-input placeholder="Email"  class="app-font-sml back2">
         </ion-input>
       </ion-item>
       <ion-item lines="none">
-        <ion-input placeholder="Email"  class="back2">
-        </ion-input>
-      </ion-item>
-      <ion-item lines="none">
-        <ion-input placeholder="Dirección"  class="back2">
+        <ion-input placeholder="Dirección"  class="app-font-sml back2">
         </ion-input>
       </ion-item>
      </ion-col>
@@ -68,41 +78,56 @@
       </ion-item>
       </ion-col>
 </ion-row>
- <ion-row>
-  <ion-col class="columnas" class="ion-text-center">
-    <ion-text>
-      Información de Concesionario
+ <ion-row class="app-margin-top-med">
+  <ion-col class="columnas ion-text-center">
+    <ion-text class="app-font-lrg">
+      <b>
+        Información de Concesionario
+      </b>
     </ion-text>
-    <ion-item lines="none">
-      <ion-label position="floating">
+    <ion-item>
+      <ion-label class="app-font-sml" position="floating">
         Dirección
-       <ion-input>  
-       </ion-input>
       </ion-label>
+      <ion-input class="app-font-sml"></ion-input>
     </ion-item> 
-    <ion-item lines="none">
-      <ion-label position="floating">
+    <ion-item>
+      <ion-label class="app-font-sml" position="floating">
         Nombre
-        <ion-input>
-        </ion-input>
       </ion-label>
+      <ion-input class="app-font-sml"></ion-input>
     </ion-item>
-    <ion-item lines="none">
-      <ion-label position="floating">
+    <ion-item>
+      <ion-label class="app-font-sml" position="floating">
         RIF 
-        <ion-input>
-        </ion-input>
       </ion-label>
+      <ion-input class="app-font-sml"></ion-input>
     </ion-item>
-    <ion-item lines="none">
-      <ion-label position="floating">
+    <ion-item>
+      <ion-label position="floating" class="app-font-sml">
         Objeto de la Empresa
-        <ion-input>
-        </ion-input>
       </ion-label>
+      <ion-input class="app-font-sml"> </ion-input>
     </ion-item>
    </ion-col>
-    <ion-col size="4">
+    <ion-col size="4" class="columnas ion-text-center colunm-right">
+      <ion-text class="app-font-lrg">
+        <b>
+          Permisologias asignadas
+        </b>
+      </ion-text>
+
+      <ion-item *ngFor="let permission of PermissionsAsignated">
+        <ion-label class="app-font-sml">
+          {{permission.name}}
+        </ion-label>
+
+        <ion-button fill="clear">
+          <ion-icon [name]="permission.asignate === true ? 'checkmark' : 'close'"
+            [color]="permission.asignate === true ? 'success' : 'danger'"
+            class="app-font-xlrg" (click)="changeStatus()"></ion-icon>
+        </ion-button>
+      </ion-item>
     </ion-col>
   </ion-row>
 
