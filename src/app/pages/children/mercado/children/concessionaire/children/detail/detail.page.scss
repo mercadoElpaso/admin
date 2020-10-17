@@ -39,3 +39,13 @@ ion-toolbar {
 .chip-status{
     border-radius: 10px;
 }
+.botones {
+    bottom: 0;
+    width: 100% ;
+    }
+    .guardar {
+        --background: var(--ion-color-blue) 
+    }
+    .backend { 
+        margin-right: 40px;
+    }

@@ -5,3 +5,45 @@ ion-toolbar{
 ion-content{
     --background: var(--ion-color-grey)
 }
+.font{
+    padding-left: 10px;
+}
+.home1{
+    background: var(--ion-color-primary);
+    color:white;
+    border-radius: 10px;
+}
+.opacidad{
+    background: rgba(0,0,0,0.3);
+    color: white;
+    border-radius: 9px 9px 10px 10px;
+}
+
+.back2{
+    padding-top: 15px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 8px;
+}
+.home2{
+    background: var(--ion-color-success);
+    color:white;
+    border-radius: 10px;
+    padding-top: 15px;
+    padding-bottom:25px;
+}
+.home3{
+    background: var(--ion-color-warning);
+    color:white;
+    border-radius: 10px;
+}
+// .general{
+//     // padding-right: 60px;
+//     // padding-left: 60px;
+// }
+.detverde{
+    position: absolute;
+    bottom: 5px;
+    width: 96%;
+    margin-right: 15px;
+}

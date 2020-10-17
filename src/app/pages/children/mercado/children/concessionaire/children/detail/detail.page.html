@@ -41,15 +41,15 @@
   <ion-col class="ion-text-start">
     <ion-row>
      <ion-col>
-      <ion-item lines="none">
-        <ion-input placeholder="Teléfono"  class="app-font-sml back2"></ion-input>
+      <ion-item>
+        <ion-input placeholder="Teléfono"  class="app-font-sml"></ion-input>
       </ion-item>
-      <ion-item lines="none">
-        <ion-input placeholder="Email"  class="app-font-sml back2">
+      <ion-item>
+        <ion-input placeholder="Email"  class="app-font-sml">
         </ion-input>
       </ion-item>
-      <ion-item lines="none">
-        <ion-input placeholder="Dirección"  class="app-font-sml back2">
+      <ion-item>
+        <ion-input placeholder="Dirección"  class="app-font-sml">
         </ion-input>
       </ion-item>
      </ion-col>
@@ -109,6 +109,10 @@
       </ion-label>
       <ion-input class="app-font-sml"> </ion-input>
     </ion-item>
+    <ion-item>
+      <ion-label position="floating" class="app-font-sml">Observación</ion-label>
+      <ion-textarea class="app-font-sml"></ion-textarea>
+    </ion-item>
    </ion-col>
     <ion-col size="4" class="columnas ion-text-center colunm-right">
       <ion-text class="app-font-lrg">
@@ -128,7 +132,20 @@
             class="app-font-xlrg" (click)="changeStatus()"></ion-icon>
         </ion-button>
       </ion-item>
+    </ion-col> 
+  </ion-row>
+  <ion-row class="app-padding-vertical backend ion-justify-content-end">
+    <ion-col class= "app-col-shrink">
+      <ion-button color="light">
+        <ion-label>
+          CANCELAR
+        </ion-label>
+      </ion-button>
+    </ion-col>
+    <ion-col class="app-col-shrink">
+      <ion-button class="guardar">
+        GUARDAR
+      </ion-button>
     </ion-col>
   </ion-row>
-
 </ion-content>
