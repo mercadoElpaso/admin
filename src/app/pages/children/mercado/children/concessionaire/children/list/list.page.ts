@@ -37,21 +37,24 @@ export class ListPage implements OnInit {
         supplier: 'Jose Alvarez',
         identification: 'V 12345678',
         direction: 'G-10',
-        name: 'El local de jose'
+        name: 'El local de jose',
+        status: 'Asignado'
       },
       {
         id: '2',
         supplier: 'Jose Perez',
         identification: 'E 12345678',
         direction: 'A-1',
-        name: 'Las carnes'
+        name: 'Las carnes',
+        status: 'Pendiente'
       },
       {
         id: '1',
         supplier: 'Jesus Alvarez',
         identification: 'V 98765432',
         direction: 'H-1 H-2 H-3',
-        name: 'Verduras de la esquina'
+        name: 'Verduras de la esquina',
+        status: 'Por Asignar'
       }
     ]
   };
@@ -74,6 +77,18 @@ export class ListPage implements OnInit {
 
   gotoDetail(record){
     this.navCtrl.navigateForward(`/concessionaire/detail`);
+  }
+  getColorStatus(record){
+    switch (record.status) {
+      case 'Pendiente':
+        return 'primary';
+        case 'Asignado':
+          return 'success';
+          case 'Por Asignar':
+          return 'warning';
+         default:
+          return 'medium';
+    }
   }
 
 
