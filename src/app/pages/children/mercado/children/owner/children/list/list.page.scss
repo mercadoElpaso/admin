@@ -122,3 +122,19 @@ ion-content{
 .botonfinal{
     color: var(--ion-color-blue)
 }
+.border{
+    border: solid 1px var(--ion-color-grey);
+    padding-left: 25px;
+    padding-right: 90px;
+    padding-top: 10px;
+}
+.whitdh{
+    max-width: 100%;
+    width: 100%;
+}
+.row2{
+    padding-top:10px;
+}
+.botonfiltro{
+    --background: var(--ion-color-blue)
+}

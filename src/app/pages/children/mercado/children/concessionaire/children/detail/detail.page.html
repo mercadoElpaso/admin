@@ -26,10 +26,9 @@
           Nombre Propietario
         </h1>
       </ion-col>
-
       <ion-col class="ion-text-end">
-        <ion-chip color="secondary" outline class="chip-status">
-          <ion-label color="success">
+        <ion-chip color="secondary" outline class="chip-status" (click)="funcion($event)">
+          <ion-label color="success"> 
              Asignado
              <ion-icon name="chevron-down"></ion-icon>
            </ion-label>
@@ -37,7 +36,6 @@
       </ion-col>
     </ion-row>
   </ion-col>
-
   <ion-col class="ion-text-start">
     <ion-row>
      <ion-col>
@@ -111,7 +109,7 @@
     </ion-item>
     <ion-item>
       <ion-label position="floating" class="app-font-sml">Observación</ion-label>
-      <ion-textarea class="app-font-sml"></ion-textarea>
+      <ion-textarea rows="3" class="app-font-sml"></ion-textarea>
     </ion-item>
    </ion-col>
     <ion-col size="4" class="columnas ion-text-center colunm-right">
@@ -126,9 +124,9 @@
           {{permission.name}}
         </ion-label>
 
-        <ion-button fill="clear">
-          <ion-icon [name]="permission.asignate === true ? 'checkmark' : 'close'"
-            [color]="permission.asignate === true ? 'success' : 'danger'"
+        <ion-button fill="clear" (click)="funcion ($event) ">
+          <ion-icon [name]="permission.asignate === true ? 'checkmark' : permission.asignate === false ?'close':'remove'"
+            [color]="permission.asignate === true ? 'success' : permission.asignate === false ? 'danger':'warning'"
             class="app-font-xlrg" (click)="changeStatus()"></ion-icon>
         </ion-button>
       </ion-item>
@@ -143,7 +141,7 @@
       </ion-button>
     </ion-col>
     <ion-col class="app-col-shrink">
-      <ion-button class="guardar">
+      <ion-button class="guardar"> 
         GUARDAR
       </ion-button>
     </ion-col>

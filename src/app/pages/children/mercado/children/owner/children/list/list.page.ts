@@ -34,7 +34,7 @@ export class ListPage implements OnInit {
     records: [
       {
         id: '1',
-        name:'Jose Alvarez',
+        name: 'Jose Alvarez',
         identification: 'V 12345678',
         email: 'fullstrike@gmail.com',
         phone: '+00 00 0000 0000',
@@ -57,7 +57,8 @@ export class ListPage implements OnInit {
         status: 'Por asignar'
       }
     ]
-  }
+  };
+  filtro = true;
   constructor(
     private popoverController: PopoverController,
     private navCtrl: NavController

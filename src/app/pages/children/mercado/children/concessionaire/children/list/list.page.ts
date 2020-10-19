@@ -8,6 +8,36 @@ import { NavController, PopoverController } from '@ionic/angular';
 })
 export class ListPage implements OnInit {
 
+  /*
+  request:{
+    current_page: 1,
+    request_batch: 0,
+    total_records: 0,
+    total_pages: 0,
+    filter: {
+        supplier: '',
+        identification: '',
+        direction: '',
+        name: '',
+        status: ''
+    }
+  }
+
+  response:{
+  current_page: 1,
+    request_batch: 0,
+    total_records: 0,
+    total_pages: 0,
+    records: [{
+      supplier: '',
+        identification: '',
+        direction: '',
+        name: '',
+        status: ''
+    },{...}]
+    }
+  */
+
   showQuantityRecordsOptions = [10, 20, 50, 100];
   batchCount = 10;
   filterBy = 'all';
@@ -58,6 +88,7 @@ export class ListPage implements OnInit {
       }
     ]
   };
+  filtro = true;
   constructor(
     private popoverController: PopoverController,
     private navCtrl: NavController

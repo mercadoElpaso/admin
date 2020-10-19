@@ -9,19 +9,58 @@
 <ion-content>
   <ion-grid class="grid-content">
     <ion-row class="ion-align-items-center">
-      <ion-col class="ion-text-left" size="8">
-        <h1 class="app-font-lrgr app-no-margin " >
+      <ion-col class="ion-text-left">
+        <h1 class="app-font-lrgr app-no-margin">
           Concesionarios
         </h1>
       </ion-col>
 
-      <ion-col size="4" class="ion-text-right">
-        <ion-searchbar animated debounce="500" placeholder = "Buscar">
-        </ion-searchbar>
+      <ion-col class="ion-text-end">
+        <ion-button (click)="filtro = !filtro" class="app-font-sml botonfiltro">
+          {{filtro===true?'Filtrar':'ocultar filtros'}}
+        </ion-button>
       </ion-col>
     </ion-row>
-
-    <ion-row>
+   <ion-row class="border" *ngIf="!filtro"> 
+     <ion-col>
+       <ion-item lines="none">
+         <ion-label class="app-font-xsml" position="floating"> NOMBRE </ion-label>
+        <ion-input>
+        </ion-input>
+       </ion-item>
+       </ion-col>
+     <ion-col offset="0.5">
+      <ion-item lines="none">
+        <ion-label class="app-font-xsml" position="floating"> RIF </ion-label>
+       <ion-input>
+       </ion-input>
+      </ion-item>
+     </ion-col>
+     <ion-col>
+      <ion-item lines="none">
+        <ion-label class="app-font-xsml" position="floating"> DIRECCION </ion-label>
+       <ion-input>
+       </ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col>
+      <ion-item lines="none">
+        <ion-label class="app-font-xsml" position="floating"> PROPIETARIO </ion-label>
+       <ion-input>
+       </ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col>
+      <ion-item lines="none">
+        <ion-select placeholder="ESTATUS" class="whitdh app-font-xsml">
+          <ion-select-option value= "ASIGNADO"> ASIGNADO </ion-select-option>
+          <ion-select-option value= "POR ASIGNAR"> POR ASIGNAR </ion-select-option>
+          <ion-select-option value= "PENDIENTE"> PENDIENTE </ion-select-option>
+         </ion-select>
+       </ion-item>
+    </ion-col>
+   </ion-row>
+    <ion-row class="margenrow2">
       <ion-col>
         <ion-grid class="data-grid">
           <ion-row class="border-bottom-row">

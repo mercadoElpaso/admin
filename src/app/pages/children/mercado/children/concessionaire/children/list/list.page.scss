@@ -110,3 +110,23 @@ ion-badge{
    color: white;
 
 }
+.botonfiltro{
+    --background: var(--ion-color-blue)
+}
+.fondo{
+    background: var(--ion-color-grey);
+    border-radius: 5px;
+}
+.border{
+    border: solid 1px var(--ion-color-grey);
+    padding-left: 25px;
+    padding-right: 80px;
+    padding-top: 10px;
+}
+.whitdh{
+    max-width: 100%;
+    width: 100%;
+}
+.margenrow2{
+    padding-top: 20px;
+}

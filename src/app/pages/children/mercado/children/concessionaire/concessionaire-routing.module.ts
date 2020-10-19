@@ -24,10 +24,13 @@ const routes: Routes = [
       {
         path: 'detail',
         loadChildren: () => import('./children/detail/detail.module').then( m => m.DetailPageModule)
+      },
+      {
+        path: 'status',
+        loadChildren: () => import('./children/status/status.module').then( m => m.StatusPageModule)
       }
     ]
   }
-
 ];
 
 @NgModule({

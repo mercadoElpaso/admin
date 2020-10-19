@@ -15,13 +15,52 @@
         </h1>
       </ion-col> 
 
-      <ion-col size="4" class="ion-text-right">
-        <ion-searchbar animated debounce="500" placeholder = "Buscar">
-        </ion-searchbar>
+      <ion-col class="ion-text-end">
+        <ion-button (click)="filtro = !filtro" class="app-font-sml botonfiltro">
+          {{filtro===true?'Filtrar':'ocultar filtros'}}
+        </ion-button>
       </ion-col>
     </ion-row>
-
-    <ion-row>
+    <ion-row class="border" *ngIf="!filtro"> 
+      <ion-col>
+        <ion-item lines="none">
+          <ion-label class="app-font-xsml" position="floating"> NOMBRE COMPLETO </ion-label>
+         <ion-input>
+         </ion-input>
+        </ion-item>
+        </ion-col>
+      <ion-col offset="0.5">
+       <ion-item lines="none">
+         <ion-label class="app-font-xsml" position="floating"> IDENTIFICACION </ion-label>
+        <ion-input>
+        </ion-input>
+       </ion-item>
+      </ion-col>
+      <ion-col>
+       <ion-item lines="none">
+         <ion-label class="app-font-xsml" position="floating"> EMAIL </ion-label>
+        <ion-input>
+        </ion-input>
+       </ion-item>
+     </ion-col>
+     <ion-col>
+       <ion-item lines="none">
+         <ion-label class="app-font-xsml" position="floating"> TELEFONO </ion-label>
+        <ion-input>
+        </ion-input>
+       </ion-item>
+     </ion-col>
+     <ion-col>
+       <ion-item lines="none">
+         <ion-select placeholder="ESTATUS" class="whitdh app-font-xsml">
+           <ion-select-option value= "asignado"> ASIGNADO </ion-select-option>
+           <ion-select-option value= "antiguopropietario"> ANT. PROPIETARIO </ion-select-option>
+           <ion-select-option value= "porasignar"> POR ASIGNAR </ion-select-option>
+          </ion-select>
+        </ion-item>
+     </ion-col>
+    </ion-row>
+    <ion-row class="row2">
       <ion-col>
         <ion-grid class="data-grid">
           <ion-row class="border-bottom-row">
